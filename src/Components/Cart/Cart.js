@@ -1,8 +1,9 @@
 import React from 'react';
 import './cart.css';
+import { Link } from 'react-router-dom';
 const Cart = (props) => {
     const cart = props.cart;
-    console.log(cart);
+    //console.log(cart);
     //const total = cart.reduce((total, prd)=> total+prd.price, 0);
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -29,7 +30,7 @@ const Cart = (props) => {
           <h4>Shipping and Handling :{shipping} </h4>
           <h5>Tax+Vat : {tax}</h5>
           <h2 className='order-total'>Order total : ${total+tax+shipping}</h2>
-
+          <Link to="/order"><button className="add-to-cart">Review Order</button></Link>      
         </div>
     );
 };
