@@ -1,6 +1,6 @@
 import React from 'react';
 import './cart.css';
-import { Link } from 'react-router-dom';
+
 const Cart = (props) => {
     const cart = props.cart;
     //console.log(cart);
@@ -8,7 +8,7 @@ const Cart = (props) => {
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
         const product = cart[i];
-        total = total+ Math.round(product.price);
+        total = total+ Math.round(product.price)*product.quantity;
            }
         let shipping =0;
            if (total>50) {
@@ -30,7 +30,9 @@ const Cart = (props) => {
           <h4>Shipping and Handling :{shipping} </h4>
           <h5>Tax+Vat : {tax}</h5>
           <h2 className='order-total'>Order total : ${total+tax+shipping}</h2>
-          <Link to="/order"><button className="add-to-cart">Review Order</button></Link>      
+         {
+             props.children
+         }       
         </div>
     );
 };

@@ -1,0 +1,14 @@
+.order-item{
+    margin-left: 5px;
+    padding-top: 20px;
+}
+
+.remove-item-button{
+    color: white;
+    background-color:#e61616;
+    height: 26px;
+    width: 200px;
+    border:1px solid #f84c08;
+    border-radius: 5px;
+    cursor: pointer;
+}
